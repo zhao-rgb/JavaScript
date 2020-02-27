@@ -185,14 +185,206 @@
                     //     alert('感谢你继续使用我们的服务')
                     // }
 
+                    //两种方式访问 person 的年龄(对象属性)
+                    var person = { 
+                        name: 'John', 
+                        age: 31, 
+                        favColor: 'green', 
+                        height: 183 
+                    }
+                    var x = person.age
+                    var y = person['age']
                     
 
+                    //两种更改属性
+                    var ourDog = {
+                        name: 'Camper',
+                        legs: 4,
+                        tails: 1,
+                        friends: ['everything']
+                    }
+                    ourDog.name = 'Happy Camper'
+                    ourDog['name'] = 'Happy Camper'
+                    document.write(ourDog.name)
+                    //添加属性
+                    ourDog.bark = 'bow-wow'
+                    //删除对象属性
+                    var c1 = ourDog['tails']
+                    delete ourDog['tails']
+                    var c2 = ourDog['tails']
+                    console.log(ourDog)
+
+                    //将文本转换为大写
+                    var message = 'hello world!'
+                    var x = message.toUpperCase()
+                    document.write(x)
+
+                    //使用 [] 读取对象属性
+                    var a = 'age'
+                    var myObj = {
+                        name: 'Loen',
+                        age: '28',
+                        eat: function(){
+                            return "I'm eating"
+                        }
+                    }
+                    console.log(myObj['name'])
+                    console.log(myObj[a])
+                    console.log(myObj['eat']())
+
+                    //构造对象
+                    function perso(firstname,lastname,age,eyecolor){
+                        this.firstname = firstname
+                        this.lastname = lastname
+                        this.age = age
+                        this.eyecolor = eyecolor
+                    }
+                    var myFather = new perso('zsm','dxx',50,'blue')
+                    console.log(myFather.age)
+
+                    //对象初始化
+                    var John = {
+                        name: 'John',
+                        age:25
+                    }
+
+                    //在构造函数中定义方法
+                    // function perso(name, age) { 
+                    //     this.name = name 
+                    //     this.age = age 
+                    //     this.changeName = function(name) { 
+                    //         this.name = name 
+                    //     }
+                    // }
+                    // var p = new perso('Loen', 28) 
+                    // p.changeName('John')
+                    // console.log(p)
+
+                    //数组赋值(2种方法)
+                    var myCars = new Array('Saab','volvo','BMW')
+
+                    var mycars = new Array()
+                    mycars[0] = 'Saab'
+                    mycars[1] = 'volvo'
+                    mycars[2] = 'BMW'
+                    mycars[3] = 'Lincoln'
+
+                    //push()方法添加元素
+                    var a = []
+                    a.push('zero')
+
+                    //pop()方法
+                    var oneDown = [1,4,6].pop();//现在oneDown的值为6，数组变成了[1,4]
+                    console.log(oneDown)
+
+                    //shift()方法
+                    var oneDown = [1,4,6].shift();//现在oneDown的值为1，数组变成了[4,6]
+                    console.log(oneDown)
+
+                    //unshift()方法在数组头部添加元素
+                    var a = ['zero']
+                    a.unshift('one')
+                    console.log(a)
+
+                    //concat()方法连接数组
+                    var c1 = ['HTML','CSS']
+                    var c2 = ['JS','Python']
+                    var course = c1.concat(c2)
+                    console.log(course)
+
+                    //indexOf()方法可返回数组中某个指定的元素位置
+                    var fruits = ['香蕉','橙子','苹果','甜瓜','苹果']
+                    var a = fruits.indexOf('苹果') //a 的值为2
+                    var b = fruits.indexOf('樱桃') //b 的值为-1
+                    //slice()方法提取字符串的某个部分
+                    var citrus = fruits.slice(1,4)
+                    console.log(citrus)
+
+                    //关联数组
+                    var person = []
+                    person['name'] = 'zwl'
+                    person['age'] =20
+                    console.log(person['age'])
 
 
+                    //String对象
+                    var str = "Hello,Nier"
+                    var a = str.toLowerCase() //字符串转为小写
+                    var b = str.toUpperCase() //字符串转为大写
+                    var c = "    Hello world    ".trim() //去掉字符串两边的空白
+                    var str = "Hello world, welcom to the w3cschool"
+                    var n = str.indexOf("welcome") //13
+                    var c = str.indexOf("loen") //-1
+                    var str="Mr Blue has a blue house and a blue car and a blue hat"
+                    // 将字符串中首次出现的blue替换成red
+                    var n = str.replace("blue","red")
+                    // 用正则匹配字符串中所有出现的blue并替换成red
+                    var c = str.replace(/blue/g,"red")
+                    var str = "Hello world!"
+                    document.write(str.substring(3)+"<br>")
+                    document.write(str.substring(3,7))
+
+                    //window对象
+                    var winInnerHeight = window.innerHeight; //返回窗口的文档显示区的高度。 
+                    var winInnerWidth = window.innerWidth; //返回窗口的文档显示区的宽度。 
+                    var winOuterWidth = window.outerWidth; // 返回窗口的外部宽度，包含工具条与滚动条。 
+                    var winOuterHeight = window.outerHeight; // 返回窗口的外部高度，包含工具条与滚动条。 
+                    var winScreenLeft = window.screenLeft; // 返回相对于屏幕窗口的x坐标 
+                    var winScreenTop = window.screenTop; // 返回相对于屏幕窗口的y坐标
+
+                    //打开一个新窗口，3 秒后将该窗口关闭     
+                    // var myWindow = window.open("", "", "width=200, height=100"); 
+                    // myWindow.document.write("<p>这是一个新窗口'</p>"); 
+                    // setTimeout(function(){ myWindow.close() }, 3000);
+
+                    // 使用 clearTimeout() 来阻止函数的执行
+                    // var myVar; 
+                    // function myFunction() { 
+                    //     myVar = setTimeout(function(){ alert("Hello") }, 3000); 
+                    // }
+                    // function myStopFunction() { 
+                    //     clearTimeout(myVar); 
+                    // }
+
+                    //返回包含 JSON 文本的字符串
+                    var str = {"name":"baidu","site":"http://www.baidu.com"}
+                    str_pretty1 = JSON.stringify(str)
+                    document.write("只有一个参数情况：")
+                    document.write("<br>")
+                    document.write("<pre>" + str_pretty1 + "</pre>")
+
+                    document.write("<br>")
+                    str_pretty2 = JSON.stringify(str,null,4) //使用4个空格缩进
+                    document.write("使用参数情况：")
+                    document.write("<br>")
+                    document.write("<pre>" + str_pretty2 + "</pre>") //pre用于格式输出
+
+                    //Math对象
+                    // var n = prompt("请输入一个数字：","")
+                    // var answer = Math.sqrt(n)
+                    // alert("数字" + n +" 的平方根是：" + answer)
+
+                    //floor方法 返回1到10之间的一个随机数
+                    var a = Math.floor((Math.random()*10)+1)
+                    console.log(a)
+
+                    //**Math.round()** 返回一个数字四舍五入后最接近的整数。
+                    x = Math.round(20.49) //20
+                    y = Math.round(-20.51) //-21
+
+                    //写一个程序,每秒打印一次当前浏览器的时间:
+                    // function printTime(){
+                    //     var d = new Date()
+                    //     var hours = d.getHours()
+                    //     var mins = d.getMinutes()
+                    //     var secs = d.getSeconds()
+                    //     document.body.innerHTML = hours+":"+mins+":"+secs
+                    // }
+                    // setInterval(printTime,1000)
 
 
-
-
+                   
+                
             </script>
         </body>
     </head>

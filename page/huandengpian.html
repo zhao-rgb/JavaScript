@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+        <body>
+            <div>
+                <button onclick="prev()">上一张</button>
+                  <img id="slider" src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/cover/6.jpg">
+                <button onclick="next()">下一张</button>
+            </div>
+            <script type="text/javascript">               
+                var images = [ "https://niit-soft.oss-cn-hangzhou.aliyuncs.com/cover/11.jpg", 
+                "https://niit-soft.oss-cn-hangzhou.aliyuncs.com/cover/12.jpg", 
+                "https://niit-soft.oss-cn-hangzhou.aliyuncs.com/cover/13.jpg", 
+                "https://niit-soft.oss-cn-hangzhou.aliyuncs.com/cover/14.jpg", 
+                "https://niit-soft.oss-cn-hangzhou.aliyuncs.com/cover/15.jpg" 
+                ];
+                var num = 0; 
+                function next() { 
+                    var slider = document.getElementById("slider"); 
+                    num++; 
+                    if(num >= images.length) { 
+                        num = 0;
+                    }
+                    slider.src = images[num]; 
+                    } 
+                    function prev() { 
+                        var slider = document.getElementById("slider"); 
+                        num--; 
+                        if(num < 0) { 
+                            num = images.length-1; 
+                        }
+                        slider.src = images[num]; 
+                    }
+            </script>
+        </body>
+</html>
